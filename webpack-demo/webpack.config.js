@@ -8,6 +8,9 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
+  devServer: {
+    static: "./dist",
+  },
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
@@ -20,5 +23,8 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
     ],
+  },
+  optimization: {
+    runtimeChunk: "single",
   },
 };
